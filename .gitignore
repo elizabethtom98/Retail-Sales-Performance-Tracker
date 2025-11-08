@@ -1,0 +1,17 @@
+# secrets
+.env
+profiles.yml
+
+# Python
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store
+
+# dbt
+target/
+dbt_packages/
+
+# Streamlit
+.streamlit/secrets.toml

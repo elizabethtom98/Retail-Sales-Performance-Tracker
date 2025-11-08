@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: dim_customer
+    description: "Customer dimension (one row per customer + segment)."
+    columns:
+      - name: customer_key
+        tests: [not_null, unique]
+      - name: customer_name
+        tests: [not_null]
+
+  - name: dim_product
+    description: "Product dimension (category, sub-category, product)."
+    columns:
+      - name: product_key
+        tests: [not_null, unique]
+      - name: category
+        tests: [not_null]
+      - name: sub_category
+        tests: [not_null]
+      - name: product_name
+        tests: [not_null]
+
+  - name: dim_date
+    description: "Date dimension (date spine) for calendar drill-downs."
+    columns:
+      - name: date
+        tests: [not_null, unique]

@@ -1,0 +1,13 @@
+version: 2
+
+models:
+  - name: stg_orders
+    description: "Cleaned line-item level orders from RAW.ORDERS"
+    columns:
+      - name: ROW_ID
+        tests:
+          - not_null
+          - unique
+      - name: ORDER_ID
+        tests:
+          - not_null

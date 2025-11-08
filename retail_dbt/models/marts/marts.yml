@@ -1,0 +1,85 @@
+version: 2
+
+models:
+  - name: fct_sales_by_segment
+    description: "Sales & profitability by customer segment, incl. AOV."
+    columns:
+      - name: segment
+        tests: [not_null]
+
+  - name: fct_ship_time
+    description: "Operational shipping KPIs by region/category."
+    columns:
+      - name: region
+        tests: [not_null]
+      - name: avg_days_to_ship
+        tests: [not_null]
+
+  - name: fct_top_products
+    description: "Top N products per category by sales (and profit ranks)."
+    columns:
+      - name: category
+        tests: [not_null]
+      - name: rk_sales
+        tests: [not_null]
+  - name: fct_sales_by_category
+    description: "Sales + profit summary at category + sub-category level"
+    columns:
+      - name: category
+        tests: [not_null]
+      - name: sub_category
+        tests: [not_null]
+
+  - name: fct_sales_by_region
+    description: "Regional performance summary (sales, profit, margin)"
+    columns:
+      - name: region
+        tests: [not_null]
+
+  - name: fct_discount_impact
+    description: "Discount vs profitability summary to measure margin erosion"
+    columns:
+      - name: category
+        tests: [not_null]
+      - name: avg_discount
+        tests: [not_null]
+  - name: fct_sales
+    description: "Final fact table for order-level sales and profitability."
+    columns:
+      - name: order_id
+        tests: [ not_null ]
+      - name: order_date
+        tests: [ not_null ]
+  - name: fct_sales_by_region
+    description: "Total orders, sales, and profit by region."
+    columns:
+      - name: REGION
+        tests: [not_null]
+      - name: TOTAL_SALES
+        tests: [not_null]
+      - name: TOTAL_PROFIT
+        tests: [not_null]
+
+  - name: fct_sales_by_month
+    description: "Monthly sales and profit aggregated at month grain."
+    columns:
+      - name: MONTH
+        tests: [not_null]
+      - name: TOTAL_SALES
+        tests: [not_null]
+
+  - name: fct_sales_rolling_avg
+    description: "3-month rolling average of monthly sales."
+    columns:
+      - name: MONTH
+        tests: [not_null]
+      - name: SALES_3M_ROLLING_AVG
+        tests: [not_null]
+
+  - name: fct_sales_ytd
+    description: "Year-to-date sales by calendar month."
+    columns:
+      - name: MONTH
+        tests: [not_null]
+      - name: SALES_YTD
+        tests: [not_null]
