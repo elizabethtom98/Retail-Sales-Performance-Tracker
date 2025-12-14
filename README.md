@@ -8,7 +8,7 @@ The pipeline uses Snowflake as the cloud data warehouse, dbt for data modeling a
 
 # Project Overview
 
-The dataset contains historical transactional sales data, including:
+**The dataset contains historical transactional sales data, including:
 Order + shipment dates
 Customer + segment details
 Product category + sub-category
@@ -17,7 +17,7 @@ Metrics: sales, quantity, profit, discount
 This project focuses on:
 ✔ Cleaning + standardizing raw data
 ✔ Building fact models for business analysis
-✔ Providing insights through an interactive dashboard
+✔ Providing insights through an interactive dashboard**
 ---
 
 ## Tools and Technologies
