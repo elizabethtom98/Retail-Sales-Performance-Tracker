@@ -6,7 +6,7 @@ The pipeline uses Snowflake as the cloud data warehouse, dbt for data modeling a
 
 ---
 
-## Project Overview
+# Project Overview
 
 The dataset contains historical transactional sales data, including:
 Order + shipment dates
